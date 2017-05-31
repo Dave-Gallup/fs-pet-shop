@@ -1,7 +1,8 @@
+#!/usr/bin/env node
 const fs    = require('fs');
 const path  = require('path');
 
-var baseDir = path.dirname(process.argv[1]);
+var baseDir = path.dirname(process.argv[1]);//TODO ask about this
 var pets;
 fs.readFile(`${baseDir}/pets.json`, (err, data) => {
   if(err) throw err;
@@ -29,6 +30,9 @@ function processMain(){
   }
 }
 
+
+
+
 function processRead(){
   if (process.argv[3] === undefined){
     console.log(pets);
@@ -42,6 +46,10 @@ function processRead(){
   }
 }
 
+
+
+
+
 function processCreate(){
   checkNArgs(3, 'Usage: node pets.js create AGE KIND NAME');
 
@@ -54,6 +62,10 @@ function processCreate(){
 
   console.log(newPet);
 }
+
+
+
+
 
 function processUpdate(){
   checkNArgs(4, 'Usage: node pets.js update INDEX AGE KIND NAME');
@@ -70,6 +82,9 @@ function processUpdate(){
   console.log(pet);
 }
 
+
+
+
 function processDestroy(){
   checkNArgs(1, 'Usage: node pets.js destroy INDEX');
 
@@ -84,6 +99,10 @@ function processDestroy(){
     if(err) throw err;
   });
 }
+
+
+
+
 
 function checkNArgs(numArgs, errorMessage){
   for(let i = 3; i < numArgs + 3; i++){
