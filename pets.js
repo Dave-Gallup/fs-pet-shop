@@ -2,9 +2,8 @@
 const fs    = require('fs');
 const path  = require('path');
 
-var baseDir = path.dirname(process.argv[1]);//TODO ask about this
 var pets;
-fs.readFile(`${baseDir}/pets.json`, (err, data) => {
+fs.readFile(`pets.json`, (err, data) => {
   if(err) throw err;
   pets = JSON.parse(data);
   processMain();
