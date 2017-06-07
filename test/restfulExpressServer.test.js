@@ -6,7 +6,7 @@ const mockFS = require('mock-fs');
 // Set the port to a different number so that it does not conflict with the
 // other test files.
 process.env.PORT = 3005;
-const app = require('../restfulExpressServer');
+const app = require('../restfulExpressService');
 
 describe('pets restfulExpressServer', () => {
   beforeEach(() => {

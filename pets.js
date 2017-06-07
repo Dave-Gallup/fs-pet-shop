@@ -8,7 +8,7 @@ fs.readFile(`${baseDir}/pets.json`, (err, data) => {
   if(err) throw err;
   pets = JSON.parse(data);
   processMain();
-})
+});
 
 function processMain(){
   switch (process.argv[2]){
